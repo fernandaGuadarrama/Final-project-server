@@ -11,7 +11,9 @@ const express = require("express");
 
 const app = express();
 
-//Primer commit de prueba
+//Request routes
+const requestRoutes=require("./routes/requestInfo.routes")
+app.use("/api", requestRoutes);
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);

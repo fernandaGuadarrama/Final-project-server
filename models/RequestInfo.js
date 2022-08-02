@@ -1,21 +1,25 @@
-const { Schema, model } = require("mongoose");
+  const { Schema, model } = require("mongoose");
 
-const RequestInfo= new Schema({
-  name: {
-    Firstname: String,
-    Lastname: String,
+  const RequestInfoSchema= new Schema({
+    Firstname: {
+      type: String,
+      required: true
     },
-    contact:{
-        email: String,
-        phone: Number,
-  },
-  area:{
-    enum: ["NuevoVallarta", "RivieraMaya", "MexicoCity"," Morelos", "ValledeBravo"]
+    Lastname:{
+      type: String,
+    },
+      email: String,
+      phone: Number,
+  
+    area: {
+      type: String,
+      enum: ["NuevoVallarta", "RivieraMaya", "MexicoCity"," Morelos", "ValledeBravo"]
+    }
   }
-}
-);
+  );
 
 
-// const RequestInfo = model("RequestInfo", RequestInfoSchema);
+  
+  const RequestInfo = model("RequestInfo", RequestInfoSchema);
 
-module.exports = RequestInfo;
+  module.exports = RequestInfo;
