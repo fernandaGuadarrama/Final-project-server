@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-const { Schema, model } = mongoose;
 
 const RequestInfo= new Schema({
   name: {
@@ -10,10 +9,13 @@ const RequestInfo= new Schema({
         email: String,
         phone: Number,
   },
-  {
-    property: [NuevoVallarta, RivieraMaya, MexicoCity, Morelos, ValledeBravo]
+  area:{
+    enum: ["NuevoVallarta", "RivieraMaya", "MexicoCity"," Morelos", "ValledeBravo"]
   }
 }
 );
 
-module.exports = model('ProgressProperties', profileSchema);
+
+// const RequestInfo = model("RequestInfo", RequestInfoSchema);
+
+module.exports = RequestInfo;

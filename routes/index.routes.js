@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const { default: HomePage } = require("../../client/src/pages/HomePage");
 const authRoutes = require("./auth.routes");
+const PropertiesRoutes = require("./properties.routes");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -10,7 +10,7 @@ router.get("/", (req, res, next) => {
 router.use("/auth", authRoutes);
 
 router.use("/properties", PropertiesRoutes);
-router.use("/profile", ProfileRoutes);
+// router.use("/profile", ProfileRoutes);
 
 
 module.exports = router;
