@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const RequestInfo = require("../models/RequestInfo")
 
 
-//  POST /api/RequestInfos  -  Creates a new RequestInfo
+//  POST /api/RequestInfo  -  Creates a new RequestInfo
 
 router.post('/', (req, res, next) => {
     console.log(req.body)
@@ -15,7 +15,7 @@ router.post('/', (req, res, next) => {
       .catch((err) => res.json(err));
   });
   
-  // GET /api/request -  Retrieves all of the RequestInfos
+  // GET /api/request -  Retrieves all of the RequestInfo
   router.get('/', (req, res, next) => {
     RequestInfo.find()
       .then(allInfo => res.json(allInfo))

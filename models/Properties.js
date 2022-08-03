@@ -10,11 +10,7 @@ const propertiesSchema= new Schema(
       required: true
     },
     photos: {
-      stage1: String,
-      stage2: String,
-      stage3: String,
-      stage4: String,
-      stage5:String
+      type: String,
     },
     title: String,
     location: String,
