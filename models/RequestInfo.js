@@ -13,7 +13,7 @@
   
     area: {
       type: String,
-      enum: ["Nuevo Vallarta", "Riviera Maya", "Mexico City"," Morelos", "Valle de Bravo"]
+      enum: ["Nuevo Vallarta", "Riviera Maya", "Mexico City","Morelos", "Valle de Bravo"]
     }
   }
   );

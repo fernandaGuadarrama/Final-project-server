@@ -2,6 +2,13 @@ const router = require("express").Router();
 const mongoose = require('mongoose');
 const RequestInfo = require("../models/RequestInfo")
 
+  
+  // GET /api/request -  Retrieves all of the RequestInfo
+  router.get('/', (req, res, next) => {
+    RequestInfo.find()
+      .then(allInfo => res.json(allInfo))
+      .catch(err => res.json(err));
+  });
 
 //  POST /api/RequestInfo  -  Creates a new RequestInfo
 
@@ -14,16 +21,10 @@ router.post('/', (req, res, next) => {
       .then((response) => res.json(response))
       .catch((err) => res.json(err));
   });
-  
-  // GET /api/request -  Retrieves all of the RequestInfo
-  router.get('/', (req, res, next) => {
-    RequestInfo.find()
-      .then(allInfo => res.json(allInfo))
-      .catch(err => res.json(err));
-  });
+
   
   //  GET /api/request/:request infoId -  Retrieves a specific request info by id
-  router.get('/:RequestInfoId', (req, res, next) => {
+  router.get('/detail/:RequestInfoId', (req, res, next) => {
     const { RequestInfoId } = req.params;
    
     if (!mongoose.Types.ObjectId.isValid(RequestInfoId)) {

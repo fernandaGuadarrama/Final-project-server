@@ -38,9 +38,7 @@ const Properties = require("../models/Properties")
       .catch(console.log);
   });
 
-  // PUT http://localhost:5005/api/propertiess
-  // Edit the property after recibe the data on req.body
-  // receive the properties id in the params
+  // PUT 
   router.put("/:id", (req, res) => {
     const { body } = req;
     const { id } = req.params;
@@ -54,55 +52,28 @@ const Properties = require("../models/Properties")
       .catch(console.log);
   });
 
+    ///update
+  router.put("/:id", (req, res) => {
+    const { body } = req;
+    const { id } = req.params;
+
+    console.log(body);
+
+    Properties.findByIdAndUpdate(id, body)
+      .then((result) => {
+        res.json(result);
+      })
+      .catch(console.log);
+  });
+
+  ///delete
+  router.delete('/delete/:id', (req, res) =>{
+    const { id } = req.params;
+    Properties.findByIdAndUpdate(id)
+    .then((result) => {
+      res.json(result);
+    })
+    .catch(console.log);
+  });
   module.exports = router;
 
-    //All the RequestInfo
-//   router.get("/", async (req, res) => {
-//     try {
-//       const RequestInfo = await RequestInfo.find();
-//       res.json(RequestInfo);
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   });
-
-//   //Property detail by id
-//   router.get("/:id", async (req, res) => {
-//     try {
-//       const { id } = req.params;
-//       const RequestInfo = await RequestInfo.findById(id);
-//       res.json(RequestInfo);
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   });
-
-//   // POST http://localhost:5005/api/RequestInfos
-//   //Crear RequestInfo recibir los datos en req.body
-//   router.post("/request", (req, res) => {
-//     const { body } = req;
-
-//     console.log(body);
-
-//     RequestInfo.create(body)
-//       .then((result) => {
-//         res.json(result);
-//       })
-//       .catch(console.log);
-//   });
-
-//   // PUT http://localhost:5005/api/RequestInfos
-//   // Edit the property after recibe the data on req.body
-//   // receive the RequestInfo id in the params
-//   router.put("/:id", (req, res) => {
-//     const { body } = req;
-//     const { id } = req.params;
-
-//     console.log(body);
-
-//     RequestInfo.findByIdAndUpdate(id, body)
-//       .then((result) => {
-//         res.json(result);
-//       })
-//       .catch(console.log);
-//   });
