@@ -12,11 +12,13 @@ const express = require("express");
 const app = express();
 
 //Request routes
-const requestRoutes=require("./routes/requestInfo.routes")
-app.use("/api", requestRoutes);
+
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
+
+// const requestRoutes=require("./routes/requestInfo.routes")
+// app.use("/api", requestRoutes);
 
 // 👇 Start handling routes here
 // Contrary to the views version, all routes are controlled from the routes/index.js

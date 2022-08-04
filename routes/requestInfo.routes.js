@@ -13,6 +13,7 @@ const RequestInfo = require("../models/RequestInfo")
 //  POST /api/RequestInfo  -  Creates a new RequestInfo
 
 router.post('/', (req, res, next) => {
+    console.log(req.headers)
     console.log(req.body)
     const { Firstname, Lastname, email, phone, area } = req.body;
 

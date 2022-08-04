@@ -25,7 +25,7 @@ const userSchema = new Schema(
     profilePic: {
       type: String,
       default:
-        "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+        "https://st.depositphotos.com/2101611/4338/v/600/depositphotos_43381243-stock-illustration-male-avatar-profile-picture.jpg"
     },
     fullName: String,
     city: String,

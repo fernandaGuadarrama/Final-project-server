@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const propertiesSchema= new Schema(
   {
     property: {
-      enum: ["Nuevo Vallarta", "Riviera Maya", "Mexico City", "Valle de Bravo"]
+      enum: ["Nuevo Vallarta", "Riviera Maya", "Mexico City", "Valle de Bravo", "Morelos"]
     },
     progress: {
       type: Number,
