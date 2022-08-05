@@ -17,7 +17,8 @@ const Properties = require("../models/Properties")
   router.get("/:id", async (req, res) => {
     try {
       const { id } = req.params;
-      const Properties = await Properties.findById(id);
+      console.log(id)
+      const properties = await Properties.findById(id);
       res.json(properties);
     } catch (err) {
       console.log(err);
