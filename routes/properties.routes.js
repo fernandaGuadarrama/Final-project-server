@@ -24,9 +24,9 @@ const Properties = require("../models/Properties")
     }
   });
 
-  // POST http://localhost:5005/api/propertiess
+  // POST http://localhost:5005/api/properties/Addform
   //Crear properties recibir los datos en req.body
-  router.post("/", (req, res) => {
+  router.post("/Addform", (req, res) => {
     const { body } = req;
 
     console.log(body);
